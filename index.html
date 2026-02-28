@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.min.css">
+"
     <title> Chemis-Tea Party</title>
 
     <style>
@@ -18,13 +20,34 @@
         --honey: #E0B451;
       }
 
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'OpenDyslex';
+      }
 
+      body {
+        height: 100vh;
+        background: linear-gradient(
+          to bottom,
+          var(--sky),
+          var(--lavender)
+          );
+          overflow: hidden;
+          position: relative;
+      }
 
-
-      
+      .title {
+        position: absolute;
+        top: 40px;
+        width: 100%;
+        text-align: center;
+        font-size: 2.3rem;
+        color: var(--deep-sage)
+        letter-spacing: 1px;
+      } 
     </style>
-
-
-    
+   
   </head>
 </html>
