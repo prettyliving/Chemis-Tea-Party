@@ -1,53 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.min.css">
-"
-    <title> Chemis-Tea Party</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Chemis-Tea Party</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-      :root {
-        --lavender: #D5CDE6;
-        --sage: #C8D4B0;
-        --deep-sage: #7B8C63;
-        --sky: #C0D6E2;
-        --blush: #DFB9B4;
-        --rose: #D39BA0;
-        --stem: #C9B8A2;
-        --pollen: #EE9452;
-        --honey: #E0B451;
-      }
+  <!-- OpenDyslexic Font -->
+  <link href="https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.min.css" rel="stylesheet">
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'OpenDyslex';
-      }
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-      body {
-        height: 100vh;
-        background: linear-gradient(
-          to bottom,
-          var(--sky),
-          var(--lavender)
-          );
-          overflow: hidden;
-          position: relative;
-      }
+<body>
 
-      .title {
-        position: absolute;
-        top: 40px;
-        width: 100%;
-        text-align: center;
-        font-size: 2.3rem;
-        color: var(--deep-sage)
-        letter-spacing: 1px;
-      } 
-    </style>
-   
-  </head>
+  <div class="title">Chemis-Tea Party 🌸</div>
+
+  <!-- Pixel Vines -->
+  <div class="pixel-vine vine-left"></div>
+  <div class="pixel-vine vine-right"></div>
+
+  <!-- Pixel Bees -->
+  <div class="pixel-bee bee1"></div>
+  <div class="pixel-bee bee2"></div>
+
+  <!-- Pixel Butterflies -->
+  <div class="pixel-butterfly butterfly1"></div>
+  <div class="pixel-butterfly butterfly2"></div>
+
+  <!-- Blank Game Area -->
+  <div class="game-area">
+    Your Garden Game Will Bloom Here 🌿
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+
+</body>
 </html>

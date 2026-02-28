@@ -1,0 +1,163 @@
+:root {
+  --lavender: #D5CDE6;
+  --sage: #C8D4B0;
+  --deep-sage: #7B8C63;
+  --sky: #C0D6E2;
+  --blush: #DFB9B4;
+  --rose: #D39BA0;
+  --stem: #C9B8A2;
+  --pollen: #EE9452;
+  --honey: #E0B451;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'OpenDyslexic', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--sky), var(--lavender));
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------- TITLE ---------- */
+
+.title {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--deep-sage);
+}
+
+/* ---------- GAME AREA ---------- */
+
+.game-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 65%;
+  background: rgba(255,255,255,0.5);
+  border: 4px dashed var(--deep-sage);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--deep-sage);
+  font-size: 1.5rem;
+  text-align: center;
+  z-index: 5;
+}
+
+/* ---------- PIXEL VINES ---------- */
+
+.pixel-vine {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--deep-sage);
+  box-shadow:
+    0 16px var(--deep-sage),
+    0 32px var(--deep-sage),
+    16px 32px var(--deep-sage),
+    16px 48px var(--deep-sage),
+    0 64px var(--deep-sage),
+    -16px 64px var(--deep-sage),
+    -16px 80px var(--deep-sage),
+    0 96px var(--deep-sage),
+    16px 112px var(--deep-sage),
+    16px 128px var(--deep-sage),
+    0 144px var(--deep-sage),
+    -16px 160px var(--deep-sage);
+  image-rendering: pixelated;
+  opacity: 0.6;
+}
+
+.vine-left {
+  top: 0;
+  left: 40px;
+}
+
+.vine-right {
+  top: 0;
+  right: 40px;
+  transform: scaleX(-1);
+}
+
+/* ---------- PIXEL BEE ---------- */
+
+.pixel-bee {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--honey);
+  image-rendering: pixelated;
+  animation: floatBee 6s ease-in-out infinite;
+}
+
+.pixel-bee::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 8px;
+  background: black;
+  top: 4px;
+}
+
+.pixel-bee::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--sky);
+  top: -6px;
+  left: -4px;
+  box-shadow: 12px 0 var(--sky);
+}
+
+.bee1 { top: 20%; left: 10%; }
+.bee2 { top: 70%; left: 75%; animation-delay: 2s; }
+
+@keyframes floatBee {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* ---------- PIXEL BUTTERFLY ---------- */
+
+.pixel-butterfly {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--rose);
+  image-rendering: pixelated;
+  animation: floatButterfly 8s ease-in-out infinite;
+}
+
+.pixel-butterfly::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--blush);
+  left: -16px;
+  box-shadow: 32px 0 var(--blush);
+}
+
+.butterfly1 { top: 40%; left: 80%; }
+.butterfly2 { top: 60%; left: 20%; animation-delay: 3s; }
+
+@keyframes floatButterfly {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
