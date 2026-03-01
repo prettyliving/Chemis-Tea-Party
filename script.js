@@ -1,3 +1,7 @@
+// ══════════════════════════════════════════════════════════════
+//  CHEMIS-TEA PARTY — script.js
+// ══════════════════════════════════════════════════════════════
+
 console.log('Garden loaded — edit INSTRUCTIONS_IMG at the top to set your image path');
 
 const INSTRUCTIONS_IMG = 'images/Instuctions.png';
@@ -9,27 +13,35 @@ const TAG_LABEL = { dye: 'Dye', food: 'Food', tea: 'Tea', med: 'Medicine' };
 // ── FLOWER DATA ───────────────────────────────────────────────
 const FLOWERS = [
   { id: 0, name: 'Lavender',      imgKey: 'lavender',     color: '#D5CDE6', cardSrc: 'images/flowers/lavender.png',
-     desc: 'Lavender gets its name from the Latin "lavare," meaning "to wash"—ancient Romans used it in their baths for its calming scent.' },
+    tags: ['dye', 'tea', 'med'],
+    desc: 'Lavender gets its name from the Latin "lavare," meaning "to wash"—ancient Romans used it in their baths for its calming scent.' },
 
   { id: 1, name: 'Hibiscus',      imgKey: 'hibiscus',     color: '#D39BA0', cardSrc: 'images/flowers/hibiscus.png',
+    tags: ['tea', 'food'],
     desc: 'Hibiscus is brewed into a bold, ruby-red drink across the Caribbean, known for its tart flavor and refreshing kick.' },
 
   { id: 2, name: 'Sunflower',     imgKey: 'sunflower',    color: '#EE9452', cardSrc: 'images/flowers/sunflower.png',
+    tags: ['food', 'dye'],
     desc: 'Young sunflowers practice heliotropism—they literally turn their heads to follow the sun across the sky.' },
 
   { id: 3, name: 'Calendula',     imgKey: 'marigold',     color: '#EE9452', cardSrc: 'images/flowers/maragold.png',
+    tags: ['food', 'dye', 'med'],
     desc: 'Calendula, often called pot marigold, has edible petals once used to add golden color to soups and butter.' },
 
   { id: 4, name: 'Gardenia',      imgKey: 'gardenia',     color: '#F5F0E0', cardSrc: 'images/flowers/garenia.png',
+    tags: ['tea'],
     desc: 'Gardenias are famous for their intoxicating fragrance—but they are notoriously picky and dramatic to grow.' },
 
   { id: 5, name: 'Coreopsis',     imgKey: 'coreopsis',    color: '#F0C040', cardSrc: 'images/flowers/Coreopsis.png',
+    tags: ['dye'],
     desc: 'Coreopsis is nicknamed "tickseed" because its tiny seeds resemble little ticks—pretty flower, unfortunate branding.' },
 
   { id: 6, name: 'Weld',          imgKey: 'weld',         color: '#D4D88A', cardSrc: 'images/flowers/weld.png',
+    tags: ['dye'],
     desc: 'Weld was once Europe\'s most important source of yellow dye before synthetic pigments took over.' },
 
   { id: 7, name: 'Black Scabiosa', imgKey: 'blackscabiosa', color: '#4A3A5A', cardSrc: 'images/flowers/black scaboisa.png',
+    tags: ['med'],
     desc: 'Black Scabiosa produces velvety blooms so deep burgundy they appear almost black—moody, dramatic, unforgettable.' },
 ];
 
@@ -71,7 +83,7 @@ const IMGS = {};
   ['macaron',        'images/game items/desert/macaron.png'],
   ['keylime',        'images/game items/desert/key lime.png'],
   ['eclair',         'images/game items/desert/eclair.png'],
-  ['cinnamonroll',   'images/game items/desert/cinnamon roll.png'],
+  ['cinnamonroll',   'images/game items/desert/cinnamon.png'],
   ['cocostrawberry', 'images/game items/desert/coco stawberry.png'],
   ['cheesecake',     'images/game items/desert/cheesecake.png'],
   ['brownie',        'images/game items/desert/brownie.png'],
@@ -543,7 +555,16 @@ document.querySelectorAll('.js-index-btn').forEach(el =>
     showScreen('index');
   })
 );
-document.getElementById('backFromIndex').addEventListener('click', () => showScreen(indexReturnScreen));
+document.getElementById('backFromIndex').addEventListener('click', () => {
+  if (indexReturnScreen === 'completion') {
+    // Hide all screens, then re-show the completion screen
+    Object.values(screens).forEach(s => s.classList.add('hidden'));
+    const cs = document.getElementById('completionScreen');
+    if (cs) cs.style.display = 'flex';
+  } else {
+    showScreen(indexReturnScreen);
+  }
+});
 document.getElementById('startBtn').addEventListener('click', () => { startGame(); showScreen('game'); });
 document.getElementById('backFromGame').addEventListener('click', () => { cancelAnimationFrame(animFrame); animFrame = null; showScreen('menu'); });
 
