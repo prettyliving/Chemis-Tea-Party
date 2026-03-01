@@ -1,7 +1,3 @@
-// ══════════════════════════════════════════════════════════════
-//  CHEMIS-TEA PARTY — script.js
-// ══════════════════════════════════════════════════════════════
-
 console.log('Garden loaded — edit INSTRUCTIONS_IMG at the top to set your image path');
 
 const INSTRUCTIONS_IMG = 'images/Instuctions.png';
