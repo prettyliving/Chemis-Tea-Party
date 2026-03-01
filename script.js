@@ -14,8 +14,8 @@ const FLOWERS = [
   { id: 2, name: 'Sunflower',     imgKey: 'sunflower',    color: '#EE9452', cardSrc: 'images/flowers/sunflower.png',
     desc: 'Young sunflowers practice heliotropism—they literally turn their heads to follow the sun across the sky.' },
 
-  { id: 3, name: 'Calendula',     imgKey: 'marigold',     color: '#EE9452', cardSrc: 'images/flowers/maragold.png',
-    desc: 'Calendula, often called pot marigold, has edible petals once used to add golden color to soups and butter.' },
+  { id: 3, name: 'Marigold',     imgKey: 'marigold',     color: '#EE9452', cardSrc: 'images/flowers/maragold.png',
+    desc: 'Marigold has edible petals once used to add golden color to soups and butter.' },
 
   { id: 4, name: 'Gardenia',      imgKey: 'gardenia',     color: '#F5F0E0', cardSrc: 'images/flowers/garenia.png',
     desc: 'Gardenias are famous for their intoxicating fragrance—but they are notoriously picky and dramatic to grow.' },
