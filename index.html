@@ -2,39 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chemis-Tea Party</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- OpenDyslexic Font -->
-  <link href="https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.min.css" rel="stylesheet">
-
-  <!-- External CSS -->
+  <title>Chemis-Tea Party</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
+  <!-- ═══ PIXEL FOLLOWER (chases cursor with lag) ═══ -->
+  <div id="mouse-follower" class="bee-follower">
+    <!-- BEE (pixel CSS) -->
+    <div class="follower-bee-pixel">
+      <div class="fb-wing-l"></div>
+      <div class="fb-wing-r"></div>
+      <div class="fb-honey"></div>
+      <div class="fb-stripe1"></div>
+      <div class="fb-stripe2"></div>
+    </div>
+    <!-- BUTTERFLY (image) -->
+    <img class="follower-butterfly-img" src="images/butterflies/butterfly3.png" alt="butterfly">
+  </div>
+
+  <!-- ═══ VINE DECORATIONS ═══ -->
+  <div class="vine-wrapper vine-wrapper-left">
+    <div class="pixel-vine"></div>
+    <div class="pixel-flower flower-wisteria"   style="top: 60px;  left: 18px;"></div>
+    <div class="pixel-flower flower-foxglove"   style="top: 130px; left: 42px;"></div>
+    <div class="pixel-flower flower-lilac"      style="top: 210px; left: 12px;"></div>
+    <div class="pixel-flower flower-blush"      style="top: 280px; left: 36px;"></div>
+    <div class="pixel-flower flower-cornflower" style="top: 360px; left: 16px;"></div>
+    <div class="pixel-flower flower-wisteria"   style="top: 440px; left: 44px;"></div>
+    <div class="pixel-flower flower-lilac"      style="top: 520px; left: 20px;"></div>
+    <div class="pixel-flower flower-foxglove"   style="top: 590px; left: 38px;"></div>
+  </div>
+
+  <div class="vine-wrapper vine-wrapper-right">
+    <div class="pixel-vine"></div>
+    <div class="pixel-flower flower-blush"      style="top: 80px;  left: 12px;"></div>
+    <div class="pixel-flower flower-cornflower" style="top: 150px; left: 40px;"></div>
+    <div class="pixel-flower flower-wisteria"   style="top: 230px; left: 18px;"></div>
+    <div class="pixel-flower flower-foxglove"   style="top: 300px; left: 44px;"></div>
+    <div class="pixel-flower flower-lilac"      style="top: 380px; left: 14px;"></div>
+    <div class="pixel-flower flower-blush"      style="top: 460px; left: 36px;"></div>
+    <div class="pixel-flower flower-cornflower" style="top: 540px; left: 20px;"></div>
+    <div class="pixel-flower flower-wisteria"   style="top: 610px; left: 42px;"></div>
+  </div>
+
+  <!-- ═══ TITLE ═══ -->
   <div class="title">Chemis-Tea Party</div>
 
-  <!-- Pixel Vines -->
-  <div class="pixel-vine vine-left"></div>
-  <div class="pixel-vine vine-right"></div>
-
-  <!-- Pixel Bees -->
+  <!-- ═══ BACKGROUND DECORATIVE BEES ═══ -->
   <div class="pixel-bee bee1"></div>
   <div class="pixel-bee bee2"></div>
 
-  <!-- Pixel Butterflies -->
-  <div class="pixel-butterfly butterfly1"></div>
-  <div class="pixel-butterfly butterfly2"></div>
+  <!-- ═══ BACKGROUND DECORATIVE BUTTERFLIES ═══ -->
+  <img src="images/butterflies/butterfly1.png" alt="Butterfly" class="butterfly-image butterfly1">
+  <img src="images/butterflies/butterfly2.png" alt="Butterfly" class="butterfly-image butterfly2">
 
-  <!-- Blank Game Area -->
+  <!-- ═══ GAME AREA ═══ -->
   <div class="game-area">
-    Garden Will Bloom Here 🌿
+
+    <!-- MENU SCREEN -->
+    <div class="screen" id="menuScreen">
+      <div class="menu-center">
+        <p class="menu-tagline">Pollinate flowers, uncover their botanical secrets</p>
+
+        <!-- Start button -->
+        <button class="button" id="startBtn">
+          <svg class="highlight" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <rect x="5" y="5" width="190" height="50" rx="28" ry="28"/>
+          </svg>
+          Start Game
+        </button>
+
+        <!-- Flower Index btn -->
+        <button class="btn js-index-btn" id="indexBtn">
+          <div class="wrapper">
+            <span class="text">Flower Index</span>
+            <div class="flower flower1"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+            <div class="flower flower2"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+            <div class="flower flower3"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+            <div class="flower flower4"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+            <div class="flower flower5"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+            <div class="flower flower6"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+          </div>
+        </button>
+
+        <!-- How to Play button -->
+        <button class="button how-to-play-btn" id="howToPlayBtn">
+          <svg class="highlight" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <rect x="5" y="5" width="190" height="50" rx="28" ry="28"/>
+          </svg>
+          How to Play
+        </button>
+
+      </div>
+
+      <!-- Bottom bar: bee/butterfly toggle -->
+      <div class="bottom-bar">
+        <div class="follower-toggle-wrap">
+          <div class="toggle-bee-mini">
+            <div class="tbm-wing-l"></div>
+            <div class="tbm-wing-r"></div>
+            <div class="tbm-body"></div>
+            <div class="tbm-stripe"></div>
+          </div>
+          <span class="toggle-label-text">Bee</span>
+          <label class="switch">
+            <input type="checkbox" class="toggle" id="followerToggle">
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label-text">Butterfly</span>
+          <div class="toggle-butterfly-mini">
+            <div class="tbm-bwing-l"></div>
+            <div class="tbm-bwing-r"></div>
+            <div class="tbm-bbody"></div>
+          </div>
+        </div>
+        <span class="bottom-hint">Move your mouse to guide your pollinator</span>
+      </div>
+    </div>
+
+    <!-- INDEX SCREEN -->
+    <div class="screen hidden" id="indexScreen">
+      <button class="back-btn" id="backFromIndex">Back</button>
+      <p class="index-title">Flower Index</p>
+      <div class="flower-index-grid" id="flowerGrid"></div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div class="screen hidden" id="gameScreen">
+      <button class="back-btn" id="backFromGame">Back</button>
+      <canvas id="gameCanvas"></canvas>
+
+      <!-- Flower Index btn — bottom-right corner -->
+      <button class="btn btn-corner js-index-btn" id="gameIndexBtn">
+        <div class="wrapper">
+          <span class="text">Flower Index</span>
+          <div class="flower flower1"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+          <div class="flower flower2"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+          <div class="flower flower3"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+          <div class="flower flower4"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+          <div class="flower flower5"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+          <div class="flower flower6"><div class="petal one"></div><div class="petal two"></div><div class="petal three"></div><div class="petal four"></div></div>
+        </div>
+      </button>
+    </div>
+
+  </div><!-- /.game-area -->
+
+  <!-- ═══ INFO MODAL ═══ -->
+  <div id="info-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">x</button>
+      <div class="modal-flower-color" id="modalColor"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <p id="modalUses"></p>
+      <div class="tag-row" id="modalTags"></div>
+    </div>
   </div>
 
-  <!-- External JS -->
   <script src="script.js"></script>
-
 </body>
 </html>
