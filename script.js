@@ -2,9 +2,6 @@ console.log('Garden loaded — edit INSTRUCTIONS_IMG at the top to set your imag
 
 const INSTRUCTIONS_IMG = 'images/Instuctions.png';
 
-// ── TAG HELPERS ──────────────────────────────────────────────
-const TAG_CLS   = { dye: 'tag-dye', food: 'tag-food', tea: 'tag-tea', med: 'tag-med' };
-const TAG_LABEL = { dye: 'Dye', food: 'Food', tea: 'Tea', med: 'Medicine' };
 
 // ── FLOWER DATA ───────────────────────────────────────────────
 const FLOWERS = [
