@@ -712,11 +712,6 @@ body {
 
 .tag-row { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 4px; }
 .tag { font-size: .62rem; padding: 1px 6px; border-radius: 50px; font-weight: 600; letter-spacing: .03em; }
-.tag-dye  { background: var(--lavender); color: #5a4a6a; }
-.tag-food { background: var(--sage);     color: #3a4a23; }
-.tag-tea  { background: var(--sky);      color: #2a4a5a; }
-.tag-med  { background: var(--blush);    color: #6a2a3a; }
-
 
 /* ── GAME SCREEN ── */
 #gameCanvas {
